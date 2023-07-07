@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-07T16:05:13.419Z",
+    "end": "2023-07-07T16:05:13.876Z",
+    "duration": 457,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e9edf824-7010-4a56-a639-2cb49bc86b82",
+      "title": "",
+      "fullFile": "C:\\Users\\Advotics\\Documents\\Sanber\\sanber-apiautomation\\test\\spec\\postAddCustomer.spec.js",
+      "file": "\\test\\spec\\postAddCustomer.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aa03dbb0-12c0-49ec-9095-874628bb58c4",
+          "title": "POST Add Customer",
+          "fullFile": "C:\\Users\\Advotics\\Documents\\Sanber\\sanber-apiautomation\\test\\spec\\postAddCustomer.spec.js",
+          "file": "\\test\\spec\\postAddCustomer.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify POST Add Customer return 200",
+              "fullTitle": "POST Add Customer Verify POST Add Customer return 200",
+              "timedOut": false,
+              "duration": 342,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request\n                        .post(\"/customers\")\n                        .send({\n                            \n                                \"name\": \"Gilang07\",\n                                \"phone\": \"081234567890\",\n                                \"address\": \"Lampung\",\n                                \"description\": \"Customer Daerah Lampung\"\n                        })\n                        .set({\n                            Authorization : AUTH,\n                            Accept : \"application/json\"\n                        })\nexpect(await response.statusCode).to.eql(201)\nexpect(await response.body.status).to.eql(\"success\")\nexpect(await response.body.message).to.eql(\"Customer berhasil ditambahkan\")\nexpect(await response.body.data.name).to.eql(\"Gilang07\")",
+              "err": {},
+              "uuid": "82250cb0-cfd0-4bd3-90f0-9cbd4ad4c3ce",
+              "parentUUID": "aa03dbb0-12c0-49ec-9095-874628bb58c4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify POST Add Customer return 404",
+              "fullTitle": "POST Add Customer Verify POST Add Customer return 404",
+              "timedOut": false,
+              "duration": 99,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request\n                        .post(\"/customer\")\n                        .send({\n                            \n                                \"name\": \"Gilang07\",\n                                \"phone\": \"081234567890\",\n                                \"address\": \"Lampung\",\n                                \"description\": \"Customer Daerah Lampung\"\n                        })\n                        .set({\n                            Authorization : AUTH,\n                            Accept : \"application/json\"\n                        })\nexpect(await response.statusCode).to.eql(404)\nexpect(await response.body.message).to.eql(\" Your URL Not Found\")",
+              "err": {},
+              "uuid": "7ccdc9ce-71cd-4df5-9035-26fd32a04118",
+              "parentUUID": "aa03dbb0-12c0-49ec-9095-874628bb58c4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82250cb0-cfd0-4bd3-90f0-9cbd4ad4c3ce",
+            "7ccdc9ce-71cd-4df5-9035-26fd32a04118"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 441,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
